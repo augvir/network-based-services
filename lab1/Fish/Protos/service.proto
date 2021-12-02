@@ -1,0 +1,28 @@
+//set the language version
+syntax = "proto3";
+
+//this will translate into C# namespace
+package Services;
+
+//this will translate into server and client stub
+service Service {    
+    //this is will translate into a service operation
+    rpc AddFish(EmptyRequest) returns (FishIndex) {}
+    rpc ChangeHungry(FishInfo) returns (ChangeSuccess) {}
+    rpc ChangeCaught(FishIndex) returns (ChangeSuccess) {}
+    rpc TryFishing(EmptyRequest) returns (ChangeSuccess) {}
+}
+
+//message must be described outside the service definition
+message EmptyRequest {}
+message FishIndex {
+    int32 index = 1;
+}
+
+message FishInfo {
+    int32 index = 1;
+    bool change = 2;
+}
+message ChangeSuccess {
+    bool success = 1;
+}
