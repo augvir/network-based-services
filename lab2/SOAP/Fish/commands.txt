@@ -1,0 +1,5 @@
+﻿//install dotnet-svcutil for current user
+dotnet tool install --global dotnet-svcutil
+
+//use dotnet-svcutil to generate SOAP client in current project
+dotnet-svcutil --sync http://127.0.0.1:5000/Service
