@@ -7,10 +7,15 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace Server
 {
-	// application entry point
+	/// <summary>
+	/// class of application's entry point
+	/// </summary>
 	public class Server
 	{
-		// program body
+		/// <summary>
+		/// program's body
+		/// </summary>
+		/// <param name="args"> program's arguments </param>
 		void Run(string[] args)
 		{
 			// configure and start the server
@@ -26,7 +31,11 @@ namespace Server
             }
 		}
 
-		// creates and configures web host builder
+		/// <summary>
+        /// a method for creating and configuring web host builder
+        /// </summary>
+        /// <param name="args"> arguments </param>
+        /// <returns> IWebHostBuilder object </returns>
 		public static IWebHostBuilder CreateWebHostBuilder(string[] args)
 		{
 			var builder =
@@ -40,7 +49,10 @@ namespace Server
 			return builder;
 		}
 
-		// program's entry point
+		/// <summary>
+		/// program's entry point
+		/// </summary>
+		/// <param name="args"> program's arguments </param>
 		static void Main(string[] args)
         {
             var self = new Server();

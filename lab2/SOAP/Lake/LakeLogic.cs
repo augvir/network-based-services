@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 namespace Server
 {
-	// networking-independant service logic
+	/// <summary>
+	/// network-independant class for server's logic, implementing lake's interface
+	/// </summary>
 	public class LakeLogic : ILake
 	{
 		readonly ReaderWriterLock _lock = new();
@@ -13,6 +15,10 @@ namespace Server
 		List<Fish> fishesInLake = new List<Fish>();
 		private int fishId = 0;
 
+		/// <summary>
+		/// adds a new fish to the list of fishes in the lake
+		/// </summary>
+		/// <returns> fish's ID in the context of lake </returns>
 		public int AddFish()
         {
             try
@@ -39,6 +45,13 @@ namespace Server
 
 		}
 
+		
+		/// <summary>
+		/// changes fish's hunger status
+		/// </summary>
+		/// <param name="index"> fish's ID </param>
+		/// <param name="change"> new fish's hunger status </param>
+		/// <returns> success of changing fish's hunger status: true / false </returns>
 		public bool ChangeHungry(int index, bool change)
         {
 			try
@@ -70,6 +83,11 @@ namespace Server
 			}
         }
 
+		/// <summary>
+		/// changes fish's caught status
+		/// </summary>
+		/// <param name="index"> fish's ID </param>
+		/// <returns> success of changing fish's caught status: true / false </returns>
 		public bool ChangeCaught (int index)
         {
 			try
@@ -91,6 +109,10 @@ namespace Server
 			}
 		}
 
+		/// <summary>
+		/// performs fisherman's attempt at fishing
+		/// </summary>
+		/// <returns> success of fishing: true / false </returns>
 		public bool TryToFish ()
         {
 			try
