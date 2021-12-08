@@ -13,6 +13,7 @@ namespace Server
 		List<Fish> fishesInLake = new List<Fish>();
 		private int fishId = 0;
 
+		// adds a fish to the list of fishes in the lake and returns its index
 		public int AddFish()
         {
             try
@@ -39,19 +40,20 @@ namespace Server
 
 		}
 
+		// changes fish's hunger status to the given change
 		public bool ChangeHungry(int index, bool change)
         {
 			try
 			{
 				_lock.AcquireWriterLock(-1);
 
-				if (fishesInLake[index].GetCaught() == true)			// if a fish is caught, changing hunger is unavailable
+				if (fishesInLake[index].GetCaught() == true)			// if a fish is caught, changing hunger is unavailable -> returns false
 					return false;
 				else
 				{
 					bool oldHunger = fishesInLake[index].GetHungry();
 
-					fishesInLake[index].SetHungry(change);				// fish's hunger status is changed
+					fishesInLake[index].SetHungry(change);				// fish's hunger status is changed -> returns true
 
 					Console.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")}  Fish's #{fishesInLake[index].GetId()} hunger changed from {oldHunger} to {change}");
 					Console.WriteLine();
@@ -70,6 +72,7 @@ namespace Server
 			}
         }
 
+		// changes fish's caught status and returns its index
 		public bool ChangeCaught (int index)
         {
 			try
@@ -91,13 +94,14 @@ namespace Server
 			}
 		}
 
+		// performs fisherman's attempt at fishing
 		public bool TryToFish ()
         {
 			try
 			{
 				_lock.AcquireWriterLock(-1);
 
-				if (fishesInLake.Count == 0)                            // if there are no fishes in the lake, fishing is unavailable
+				if (fishesInLake.Count == 0)                            // if there are no fishes in the lake, fishing is unavailable -> returns false
 				{
 					Console.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")}  There are NO FISHES to catch");
 					Console.WriteLine();

@@ -7,10 +7,15 @@ using Microsoft.Extensions.Hosting;
 
 namespace Server
 {
-	// application entry point
+	/// <summary>
+	/// class of application's entry point
+	/// </summary>
 	public class Server
 	{
-		// program body
+		/// <summary>
+		/// program's body
+		/// </summary>
+		/// <param name="args"> program's arguments </param>
 		void Run(string[] args)
 		{
 			// configure and start the server
@@ -25,7 +30,11 @@ namespace Server
             }
 		}
 
-		// configures and runs the server
+		/// <summary>
+		/// a method for configuring and running the server
+		/// </summary>
+		/// <param name="args"> arguments </param>
+		/// <returns> IHostBuilder item </returns>
 		public static IHostBuilder CreateHostBuilder(string[] args) 
 		{
 			return 
@@ -40,7 +49,10 @@ namespace Server
 					});
 		}
 
-        // program's entry point
+		/// <summary>
+		/// program's entry point
+		/// </summary>
+		/// <param name="args"> program's arguments </param>
         static void Main(string[] args)
         {
             var self = new Server();

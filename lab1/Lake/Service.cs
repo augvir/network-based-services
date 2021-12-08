@@ -8,10 +8,13 @@ using Services;
 
 namespace Server
 {
-	// service; this is made to run as a singleton instance
+	/// <summary>
+	/// service's class that is made to run as a singleton instance
+	/// connects server's logic to RPC methods
+	/// </summary>
 	public class Service : Services.Service.ServiceBase
 	{
-		// service logic implementation
+		// implementation of server's logic
 		private LakeLogic logic = new LakeLogic();
 
 		public override Task<FishIndex> AddFish(EmptyRequest request, ServerCallContext context)
