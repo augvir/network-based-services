@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Grpc.Core;
 
-//this comes from GRPC generated code
+// this comes from GRPC generated code
 using Services;
 
 

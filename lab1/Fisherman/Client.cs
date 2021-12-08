@@ -8,8 +8,14 @@ using Services;
 
 namespace Client
 {
+	/// <summary>
+	/// client's (fisherman's) class
+	/// </summary>
 	class Client
 	{
+		/// <summary>
+		/// class' body
+		/// </summary>
 		private void Run() {
 			var channel = GrpcChannel.ForAddress("http://127.0.0.1:5000");
 			var client = new Service.ServiceClient(channel);
@@ -38,6 +44,10 @@ namespace Client
 			}
 		}
 
+		/// <summary>
+		/// class' entry point
+		/// </summary>
+		/// <param name="args"> arguments </param>
 		static void Main(string[] args)
 		{
 			var self = new Client();
