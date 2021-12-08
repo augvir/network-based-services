@@ -8,25 +8,30 @@ using RabbitMQ.Client.Events;
 
 namespace Server
 {
+	/// <summary>
+	/// service's class
+	/// </summary>
 	class Service
     {
-		// Name of the request exchange
+		// name of the request exchange
 		private static readonly String ExchangeName = "T120B180.DedicatedQueues.Exchange";
 
-		// Name of the request queue
+		// name of the request queue
 		private static readonly String ServerQueueName = "T120B180.DedicatedQueues.ServerQueue";
 
-		// Connection to RabbitMQ message broker
+		// connection to RabbitMQ message broker
 		private IConnection rmqConn;
 
-		// Communications channel to RabbitMQ message broker
+		// communications channel to RabbitMQ message broker
 		private IModel rmqChann;
 
-		// Service logic
+		// service logic
 		private LakeLogic logic = new LakeLogic();
 
 
-		// Constructor
+		/// <summary>
+		/// a class' constructor
+		/// </summary>
 		public Service()
 		{
 			// connect to the RabbitMQ message broker

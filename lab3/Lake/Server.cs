@@ -4,10 +4,14 @@ using System.Threading;
 
 namespace Server
 {
-	// application entry point
+	/// <summary>
+	/// class of application's entry point
+	/// </summary>
 	public class Server
 	{
-		// program body
+		/// <summary>
+		/// program's body
+		/// </summary>
 		void Run()
 		{
 			while (true)
@@ -38,7 +42,10 @@ namespace Server
 			}
 		}
 
-        // program's entry point
+        /// <summary>
+		/// program's entry point
+		/// </summary>
+		/// <param name="args"> program's arguments </param>
         static void Main(string[] args)
         {
 			var self = new Server();

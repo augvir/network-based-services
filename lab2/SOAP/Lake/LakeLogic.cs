@@ -45,7 +45,6 @@ namespace Server
 
 		}
 
-		
 		/// <summary>
 		/// changes fish's hunger status
 		/// </summary>

@@ -2,13 +2,15 @@ using System;
 
 namespace Common.MQ
 {
-	// Wrapper for RPC calls and responses
+	/// <summary>
+	/// a wrapper class for RPC calls and responses
+	/// </summary>
 	public class RPCMessage
 	{
-		// Action type
+		// action type
 		public String Action { get; set; }
 
-		// Action data
+		// action data
 		public String Data { get; set; }
 	}
 }

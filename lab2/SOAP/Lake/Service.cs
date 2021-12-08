@@ -1,6 +1,8 @@
 namespace Server
 {
-	// service; this is made to run as a singleton instance
+	/// <summary>
+	/// service's class that is made to run as a singleton instance
+	/// </summary>
 	public class Service : ILake
 	{
 		// service logic implementation

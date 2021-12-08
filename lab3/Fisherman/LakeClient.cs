@@ -8,31 +8,36 @@ using RabbitMQ.Client.Events;
 
 namespace Client
 {
+	/// <summary>
+	/// a client's class implementing lake's interface
+	/// </summary>
 	class LakeClient : ILake
 	{
-		// Name of the request exchange
+		// name of the request exchange
 		private static readonly String ExchangeName = "T120B180.DedicatedQueues.Exchange";
 
-		// Name of the request queue
+		// name of the request queue
 		private static readonly String ServerQueueName = "T120B180.DedicatedQueues.ServerQueue";
 
-		// Prefix for the name of the client queue
+		// prefix for the name of the client queue
 		private static readonly String ClientQueueNamePrefix = "T120B180.DedicatedQueues.ClientQueue_";
 
-		// Service client ID
+		// service client ID
 		public String ClientId { get; }
 
-		// Name of the client queue
+		// name of the client queue
 		private String ClientQueueName { get; }
 
-		// Connection to RabbitMQ message broker
+		// connection to RabbitMQ message broker
 		private IConnection rmqConn;
 
-		// Communications channel to RabbitMQ message broker
+		// communications channel to RabbitMQ message broker
 		private IModel rmqChann;
 
 
-		/// Constructor.
+		/// <summary>
+		/// a class' constructor
+		/// </summary>
 		public LakeClient()
 		{
 			// initialize properties
@@ -135,7 +140,10 @@ namespace Client
 			return result;
 		}
 
-		// adds a fish to the list of fishes in the lake
+		/// <summary>
+        /// adds a new fish to the list of fishes in the lake
+        /// </summary>
+        /// <returns> fish's ID in the context of lake </returns>
 		public int AddFish()
 		{
 			var result =
@@ -148,7 +156,12 @@ namespace Client
 			return result;
 		}
 
-		// changes fish's hunger status
+		/// <summary>
+        /// changes fish's hunger status
+        /// </summary>
+        /// <param name="index"> fish's ID </param>
+        /// <param name="change"> new fish's hunger status </param>
+        /// <returns> success of changing fish's hunger status: true / false </returns>
 		public bool ChangeHungry(int index, bool change)
 		{
 			var result =
@@ -161,7 +174,11 @@ namespace Client
 			return result;
 		}
 
-		// changes fish's caught status
+		/// <summary>
+        /// changes fish's caught status
+        /// </summary>
+        /// <param name="index"> fish's ID </param>
+        /// <returns> success of changing fish's caught status: true / false </returns>
 		public bool ChangeCaught(int index)
 		{
 			var result =
@@ -174,7 +191,10 @@ namespace Client
 			return result;
 		}
 
-		// performs fisherman's attempt at fishing
+		/// <summary>
+        /// performs fisherman's attempt at fishing
+        /// </summary>
+        /// <returns> success of fishing: true / false </returns>
 		public bool TryToFish()
 		{
 			var result =

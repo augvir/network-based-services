@@ -5,8 +5,14 @@ using ServiceReference;
 
 namespace Client
 {
+	/// <summary>
+	/// client's (fisherman's) class
+	/// </summary>
 	class Client
 	{
+		/// <summary>
+		/// class' body
+		/// </summary>
 		private void Run()
 		{
 			//connect to server
@@ -45,6 +51,10 @@ namespace Client
 			}
 		}
 
+		/// <summary>
+		/// class' entry point
+		/// </summary>
+		/// <param name="args"> arguments </param>
 		static void Main(string[] args)
 		{
 			var self = new Client();

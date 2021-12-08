@@ -3,8 +3,14 @@ using System.Threading;
 
 namespace Client
 {
+	/// <summary>
+	/// client's (fish's) class
+	/// </summary>
 	class Client
 	{
+		/// <summary>
+		/// class' body
+		/// </summary>
 		private void Run() {
 			
 			try
@@ -56,6 +62,10 @@ namespace Client
 			}
 		}
 
+		/// <summary>
+		/// class' entry point
+		/// </summary>
+		/// <param name="args"> arguments </param>
 		static void Main(string[] args)
 		{
 			var self = new Client();

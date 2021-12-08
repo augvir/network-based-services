@@ -1,17 +1,35 @@
 ﻿namespace Server
 {
+    /// <summary>
+    /// an interface class for server's (lake's) methods with contracts
+    /// </summary>
     public interface ILake
     {
-        // adds a fish to the list of fishes in the lake
+        /// <summary>
+        /// adds a new fish to the list of fishes in the lake
+        /// </summary>
+        /// <returns> fish's ID in the context of lake </returns>
         public int AddFish();
 
-        // changes fish's hunger status
+        /// <summary>
+        /// changes fish's hunger status
+        /// </summary>
+        /// <param name="index"> fish's ID </param>
+        /// <param name="change"> new fish's hunger status </param>
+        /// <returns> success of changing fish's hunger status: true / false </returns>
         public bool ChangeHungry(int index, bool change);
 
-        // changes fish's caught status
+        /// <summary>
+        /// changes fish's caught status
+        /// </summary>
+        /// <param name="index"> fish's ID </param>
+        /// <returns> success of changing fish's caught status: true / false </returns>
         public bool ChangeCaught(int index);
 
-        // performs fisherman's attempt at fishing
+        /// <summary>
+        /// performs fisherman's attempt at fishing
+        /// </summary>
+        /// <returns> success of fishing: true / false </returns>
         public bool TryToFish();
     }
 }
