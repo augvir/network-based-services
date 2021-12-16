@@ -158,7 +158,7 @@ namespace ServiceReference
         {
             if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_ILake))
             {
-                return new System.ServiceModel.EndpointAddress("http://127.0.0.1:5000/Service");
+                return new System.ServiceModel.EndpointAddress("http://127.0.0.1:5002/Service");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

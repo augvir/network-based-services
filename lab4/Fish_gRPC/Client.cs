@@ -17,7 +17,7 @@ namespace Client
 		/// class' body
 		/// </summary>
 		private void Run() {
-			var channel = GrpcChannel.ForAddress("http://127.0.0.1:5000");
+			var channel = GrpcChannel.ForAddress("http://127.0.0.1:5001");
 			var client = new Service.ServiceClient(channel);
 
 			var random = new Random();
