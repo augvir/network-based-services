@@ -5,7 +5,6 @@ using Grpc.Core;
 // this comes from GRPC generated code
 using Services;
 
-
 namespace Server
 {
     /// <summary>

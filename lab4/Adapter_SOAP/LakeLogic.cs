@@ -1,9 +1,6 @@
 using System;
 using System.Threading;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Mime;
-using System.Text;
 using ServiceReference;
 
 namespace Server
@@ -32,14 +29,13 @@ namespace Server
 		/// <returns> success of fishing: true / false </returns>
 		public bool TryToFish ()
         {
+			Console.WriteLine();
+			Console.WriteLine($"Forwarding TryToFish() request to from SOAP client to REST server");
+			Console.WriteLine();
 
-				Console.WriteLine();
-				Console.WriteLine($"Forwarding TryToFish() request to from SOAP client to REST server");
-				Console.WriteLine();
-
-				ServiceClient clientRef = new ServiceClient(new HttpClient());
-				var result = clientRef.TryToFish();
-				return result;
+			ServiceClient clientRef = new ServiceClient(new HttpClient());
+			var result = clientRef.TryToFish();
+			return result;
 		}
 	}
 }

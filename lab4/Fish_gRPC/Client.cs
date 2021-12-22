@@ -5,7 +5,6 @@ using Grpc.Net.Client;
 //this comes from GRPC generated code
 using Services;
 
-
 namespace Client
 {
 	/// <summary>

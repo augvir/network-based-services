@@ -1,12 +1,5 @@
 ﻿namespace Server
 {
-    public class ByValStruct
-    {
-        public int Index { get; set; }
-        public bool Change { get; set; }
-    }
-
-
     /// <summary>
     /// an interface class for server's (lake's) methods
     /// </summary>

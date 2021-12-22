@@ -4,7 +4,6 @@ using System.Threading;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-
 namespace Server
 {
 	/// <summary>
